@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
+import ClearIcon from '@material-ui/icons/Clear';
+import LanguageIcon from '@material-ui/icons/Language';
+import { Translate } from '@material-ui/icons';
 
 function Header() {
+
+    const [burgerStatus, setBurgerStatus] = useState(false);
     return (
         <Container>
             <a>
@@ -21,9 +26,12 @@ function Header() {
             <RightMenu>
                 <a href ="#">Shop</a>
                 <a href ="#">Tesla Account</a>
-                <CustomMenu />
+                <CustomMenu onClick={()=> setBurgerStatus(true)} />
             </RightMenu>
-            <BurgerMenu>
+            <BurgerMenu show={burgerStatus}>
+                <CloseWrapper>
+                    <CustomClose onClick={()=> setBurgerStatus(false)} />
+                </CloseWrapper>
                 <li><a href = "#">Model S</a></li>
                 <li><a href = "#">Model Y</a></li>
                 <li><a href = "#">Model 3</a></li>
@@ -45,6 +53,10 @@ function Header() {
                 <li><a href = "#">Shop</a></li>
                 <li><a href = "#">Account</a></li>
                 <li><a href = "#">More</a></li>
+                <LanguageWrapper>
+                    <LanuageIconGlobe />
+                    <p>United States</p>
+                </LanguageWrapper>
 
                 
             </BurgerMenu>
@@ -75,10 +87,12 @@ const Menu = styled.div`
     flex:1;
 
 
-    a {
+    a { 
+        font-size:14px;
         font-weight: 600;
         padding: 0 10px;
         flex-wrap: nowrap;
+        letter-spacing:1px;
     }
     @media(max-width: 768px){
         display: none;
@@ -104,20 +118,46 @@ const BurgerMenu = styled.div`
     top:0;
     bottom:0;
     right:0;
-    background-color: white;
-    width: 300px;
+    background-color: rgba(249,249,249, 0.95);
+    width: 380px;
     z-index: 100;
     list-style: none;
     padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: start;
+    transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)' } ;
+    transition: transform 0.3s ease-in;
     li{ 
-        border:2px solid rgba(249,249,249,0.1);
-        padding: 7px 0;
-        a{
+        padding: 8px 8px;
+        a{  
+            font-size:14px;
             font-weight: 450;
         }
     }
+    ClearIcon
+`
 
+const CustomClose = styled(ClearIcon)`
+    cursor: pointer;
+`
+const CloseWrapper = styled.div`
+    display:flex;
+    justify-content: flex-end;
+`
+
+const LanguageWrapper = styled.div`
+    display: flex;
+    padding: 8px 8px;
+    p{  
+        cursor: pointer;
+        padding: 0px 8px;
+        font-size:14px;
+        font-weight: 500;
+    }
+`
+
+const LanuageIconGlobe = styled(LanguageIcon)`
+    
+   
 `
