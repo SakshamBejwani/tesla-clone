@@ -102,7 +102,7 @@ const Menu = styled.div`
 const RightMenu = styled.div`
     display: flex;
     align-items: center;
-    a {
+    a { font-size:14px;
         font-weight: 600;
         padding: 0 10px;
         flex-wrap: nowrap;
@@ -111,6 +111,7 @@ const RightMenu = styled.div`
 
 const CustomMenu = styled(MenuIcon)`
     cursor: pointer;
+    
 
 `
 const BurgerMenu = styled.div`

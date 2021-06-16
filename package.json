@@ -1,6 +1,6 @@
 {
   "name": "tesla-clone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -36,5 +36,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SakshamBejwani/tesla-clone.git"
+  },
+  "keywords": [
+    "Tesla-Clone"
+  ],
+  "author": "Saksham Bejwani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SakshamBejwani/tesla-clone/issues"
+  },
+  "homepage": "https://github.com/SakshamBejwani/tesla-clone#readme"
 }

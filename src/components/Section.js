@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Footer from '/home/mouthy/tesla-clone/tesla-clone/src/components/Footer'
 import Fade from 'react-reveal/Fade';
+
 
 function Section({title,description,leftBtnText,rightBtnText,backgroundImg}) {
     
@@ -29,8 +31,9 @@ function Section({title,description,leftBtnText,rightBtnText,backgroundImg}) {
             <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
 
-
+            
         </Wrap>
+        
     )
 }
 
